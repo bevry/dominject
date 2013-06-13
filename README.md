@@ -23,14 +23,15 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 
 ``` javascript
 var dominject = require('dominject');
-dominject({
+var element = dominject({
     type: 'script',
     url: '//some-url.js',
     attrs: {},  // attributes to be added to the injected dom element
+    timeout: 60*1000, // defaults to one minute that is allowed before the injection times out
     next: function(err,el){
         // completion callback for once the element has completed or error'd
     }
-})
+}); // returns the element that was injected
 ```
 
 
