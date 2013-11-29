@@ -1,34 +1,54 @@
 {
-	"name": "dominject",
-	"version": "1.0.2",
-	"description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
-	"homepage": "https://github.com/bevry/dominject",
-	"keywords": [
-		"dom", "inject"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"bugs": {
-		"url": "https://github.com/bevry/dominject/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/bevry/dominject.git"
-	},
-	"engines": {
-		"node": ">=0.4"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"coffee-script": "~1.6.2"
-	},
-	"directories": {
-		"lib": "./out/lib"
-	},
-	"main": "./out/lib/dominject.js"
+  "title": "DOM Inject",
+  "name": "dominject",
+  "version": "1.0.3",
+  "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
+  "homepage": "https://github.com/bevry/dominject",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "bevry",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
+  "keywords": [
+    "dom",
+    "inject"
+  ],
+  "author": "2013+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "sponsors": [
+    "Wholesale Blank T-Shirts (www.wholesale-blank-tshirts.com.au)",
+    "TopBetta (https://www.topbetta.com.au)"
+  ],
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "bugs": {
+    "url": "https://github.com/bevry/dominject/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bevry/dominject.git"
+  },
+  "engines": {
+    "node": ">=0.4"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "projectz": "~0.2.7"
+  },
+  "directories": {
+    "lib": "./out/lib"
+  },
+  "scripts": {
+    "test": "echo 'no tests yet'"
+  },
+  "main": "./out/lib/dominject.js"
 }

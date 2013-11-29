@@ -59,7 +59,7 @@ dominject = (opts) ->
 			return finish(err)
 
 		# Handle on Timeout
-		onError = ->
+		onTimeout = ->
 			# Check
 			return  unless !done
 

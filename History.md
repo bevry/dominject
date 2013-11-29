@@ -1,4 +1,8 @@
-## History
+# History
+
+- v1.0.3 November 29, 2013
+	- Fixed `Uncaught ReferenceError: onTimeout is not defined`
+	- Repackaged
 
 - v1.0.2 June 13, 2013
 	- Removed debug lines
