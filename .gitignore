@@ -1,8 +1,12 @@
-# v1.3.5 October 31, 2013
+# 2016 March 21
 # https://github.com/bevry/base
 
 # Temp Files
+**/.docpad.db
+**/out.*
 **/*.log
+**/*.cpuprofile
+**/*.heapsnapshot
 
 # Build Files
 build/
@@ -10,8 +14,23 @@ components/
 bower_components/
 node_modules/
 out/
+*output/
+coffeejs/
+coffee/
+es5/
+es2015/
+esnext/
+
+# Editor Caches
+.c9/
+
+# Private Files
+.env
+.idea
+.cake_task_cache
+
 
 # =====================================
-# CUSTOM MODIFICATIONS
+# CUSTOM
 
 # None
