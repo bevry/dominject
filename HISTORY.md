@@ -1,7 +1,11 @@
 # History
 
+## v2.0.0 2018 January 26
+- Rewrote from CoffeeScript to ESNext
+- Updated base files
+
 ## v1.1.0 2015 December 12
-- Updated internal conventions
+- Updated base files
 
 ## v1.0.3 2013 November 29
 - Fixed `Uncaught ReferenceError: onTimeout is not defined`

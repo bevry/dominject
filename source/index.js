@@ -1,15 +1,10 @@
-/* @flow */
-
-// @TODO
-// Flow type seems to dislike extending the HTMLElement class
-// May need to do a global map, which is pretty narly
-
 // Prepare
 const ONE_MINUTE = 60 * 1000
 
 /* :: declare class DOMInjectElement extends HTMLElement {
   ondominject: Array<function>;
-  dominjected: bool;
+  domInjectDone: bool;
+  domInjectTimer: any;
 } */
 
 /**
@@ -24,27 +19,23 @@ const ONE_MINUTE = 60 * 1000
  */
 export default function dominject (opts /* :Object */) {
 	// Extract
-	const {type, url, attrs = {}, timeout = ONE_MINUTE} = opts
-
-	// Prepare
-	let timer = null
-	let el /* : ?DOMInjectElement */ = null
+	const { type, url, attrs = {}, timeout = ONE_MINUTE } = opts
 
 	// Ensure that errors won't go unhandled if the next callback doesn't exist
 	function next (err, el) {
-		if ( opts.next ) {
+		if (opts.next) {
 			opts.next(err, el)
 		}
-		else if ( err ) {
+		else if (err) {
 			throw err
 		}
 	}
 
 	// Check if we already have an existing element
-	// If so, our job was el.dominjected earlier
-	el = document.getElementById(url) || null
-	if ( el != null ) {
-		if ( el.dominjected ) {
+	// If so, our job was el.domInjectDone earlier
+	let el /* : HTMLElement */ = document.getElementById(url)
+	if (el) {
+		if (el.domInjectDone) {
 			next(null, el)
 		}
 		else {
@@ -57,24 +48,25 @@ export default function dominject (opts /* :Object */) {
 	// Finish up
 	function finish (err) {
 		// Check
-		if ( el.dominjected )  return
+		if (el.domInjectDone) return
 
 		// Reset
-		el.dominjected = true
+		el.domInjectDone = true
 		el.onload = el.onreadystatechange = null
-		if ( timer != null ) {
-			clearTimeout(timer)
-			timer = null
+		if (el.domInjectTimer != null) {
+			clearTimeout(el.domInjectTimer)
+			el.domInjectTimer = null
 		}
 
 		// Remove the element if we error'd
-		if ( err && el && parent ) {
+		if (err && el && parent) {
 			el.parentNode.removeChild(el)
 			el = null
 		}
 
 		// Complete (with ensured err as null)
-		let handler; while ( handler = el.ondominject.shift() ) {
+		/* eslint no-cond-assign:0 */
+		let handler; while (handler = el.ondominject.shift()) {
 			handler(err || null, el)
 		}
 	}
@@ -82,7 +74,7 @@ export default function dominject (opts /* :Object */) {
 	// Handle on Load
 	function onLoad () {
 		// Check
-		if ( el.dominjected
+		if (el.domInjectDone
 			|| !this.readyState /* browsers/events that do not support ready state */
 			|| this.readyState === 'complete' /* mdn */
 			|| this.readyState === 'loaded' /* IE */
@@ -94,7 +86,7 @@ export default function dominject (opts /* :Object */) {
 	// Handle on Error
 	function onError () {
 		// Check
-		if ( !el.dominjected ) {
+		if (!el.domInjectDone) {
 			// Error
 			const err = new Error(`The ${url} failed to be injected`)
 			finish(err)
@@ -104,7 +96,7 @@ export default function dominject (opts /* :Object */) {
 	// Handle on Timeout
 	function onTimeout () {
 		// Check
-		if ( !el.dominjected ) {
+		if (!el.domInjectDone) {
 			// Error
 			const err = new Error(`The url ${url} took too long to be injected and timed out`)
 			finish(err)
@@ -112,19 +104,19 @@ export default function dominject (opts /* :Object */) {
 	}
 
 	// Handle
-	switch ( type ) {
+	switch (type) {
 		case 'script': {
 			// Create
 			el = document.createElement('script')
 			el.ondominject = [next]
-			el.dominjected = false
+			el.domInjectDone = false
 
 			// Attributes
-			if ( attrs.defer == null )  attrs.defer = true
-			if ( attrs.src == null )    attrs.src = url
-			if ( attrs.id == null )     attrs.id = url
-			for ( const key in attrs ) {
-				if ( attrs.hasOwnProperty(key) ) {
+			if (attrs.defer == null) attrs.defer = true
+			if (attrs.src == null) attrs.src = url
+			if (attrs.id == null) attrs.id = url
+			for (const key in attrs) {
+				if (attrs.hasOwnProperty(key)) {
 					el.setAttribute(key, attrs[key])
 				}
 			}
@@ -142,14 +134,14 @@ export default function dominject (opts /* :Object */) {
 			// Create
 			el = document.createElement('link')
 			el.ondominject = [next]
-			el.dominjected = false
+			el.domInjectDone = false
 
 			// Attributes
-			if ( attrs.rel == null )   attrs.rel = 'stylesheet'
-			if ( attrs.href == null )  attrs.href = url
-			if ( attrs.id == null )    attrs.id = url
-			for ( const key in attrs ) {
-				if ( attrs.hasOwnProperty(key) ) {
+			if (attrs.rel == null) attrs.rel = 'stylesheet'
+			if (attrs.href == null) attrs.href = url
+			if (attrs.id == null) attrs.id = url
+			for (const key in attrs) {
+				if (attrs.hasOwnProperty(key)) {
 					el.setAttribute(key, attrs[key])
 				}
 			}
@@ -178,9 +170,7 @@ export default function dominject (opts /* :Object */) {
 	}
 
 	// Timeout if applicable
-	if ( timeout ) {
-		timer = setTimeout(onTimeout, timeout)
-	}
+	if (timeout) el.domInjectTimer = setTimeout(onTimeout, timeout)
 
 	// Return the element
 	return el
