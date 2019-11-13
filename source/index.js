@@ -17,16 +17,15 @@ const ONE_MINUTE = 60 * 1000
  * @param {function} [opts.next] - the completion callback, accepts a potential Error as the first argument, and the dom element as the second
  * @returns {string}
  */
-export default function dominject (opts /* :Object */) {
+export default function dominject(opts /* :Object */) {
 	// Extract
 	const { type, url, attrs = {}, timeout = ONE_MINUTE } = opts
 
 	// Ensure that errors won't go unhandled if the next callback doesn't exist
-	function next (err, el) {
+	function next(err, el) {
 		if (opts.next) {
 			opts.next(err, el)
-		}
-		else if (err) {
+		} else if (err) {
 			throw err
 		}
 	}
@@ -37,8 +36,7 @@ export default function dominject (opts /* :Object */) {
 	if (el) {
 		if (el.domInjectDone) {
 			next(null, el)
-		}
-		else {
+		} else {
 			el.ondominject.push(next)
 		}
 		return el
@@ -46,7 +44,7 @@ export default function dominject (opts /* :Object */) {
 	// Otherwise create the element
 
 	// Finish up
-	function finish (err) {
+	function finish(err) {
 		// Check
 		if (el.domInjectDone) return
 
@@ -66,25 +64,27 @@ export default function dominject (opts /* :Object */) {
 
 		// Complete (with ensured err as null)
 		/* eslint no-cond-assign:0 */
-		let handler; while (handler = el.ondominject.shift()) {
+		let handler
+		while ((handler = el.ondominject.shift())) {
 			handler(err || null, el)
 		}
 	}
 
 	// Handle on Load
-	function onLoad () {
+	function onLoad() {
 		// Check
-		if (el.domInjectDone
-			|| !this.readyState /* browsers/events that do not support ready state */
-			|| this.readyState === 'complete' /* mdn */
-			|| this.readyState === 'loaded' /* IE */
+		if (
+			el.domInjectDone ||
+			!this.readyState /* browsers/events that do not support ready state */ ||
+			this.readyState === 'complete' /* mdn */ ||
+			this.readyState === 'loaded' /* IE */
 		) {
 			finish()
 		}
 	}
 
 	// Handle on Error
-	function onError () {
+	function onError() {
 		// Check
 		if (!el.domInjectDone) {
 			// Error
@@ -94,11 +94,13 @@ export default function dominject (opts /* :Object */) {
 	}
 
 	// Handle on Timeout
-	function onTimeout () {
+	function onTimeout() {
 		// Check
 		if (!el.domInjectDone) {
 			// Error
-			const err = new Error(`The url ${url} took too long to be injected and timed out`)
+			const err = new Error(
+				`The url ${url} took too long to be injected and timed out`
+			)
 			finish(err)
 		}
 	}
@@ -164,7 +166,9 @@ export default function dominject (opts /* :Object */) {
 		// Something else
 		default: {
 			// Error
-			const err = new Error(`The url ${url} has an unknown inject type of ${type}`)
+			const err = new Error(
+				`The url ${url} has an unknown inject type of ${type}`
+			)
 			return next(err)
 		}
 	}

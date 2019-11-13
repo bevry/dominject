@@ -1,33 +1,25 @@
 sudo: false
 language: node_js
 node_js:
-- '0.8'
-- '0.10'
 - '0.12'
 - '4'
 - '6'
 - '8'
-- '9'
+- '10'
+- '12'
+- '13'
 matrix:
   fast_finish: true
-  allow_failures:
-  - node_js: '0.8'
-  - node_js: '0.10'
-  - node_js: '9'
-cache:
-  directories:
-  - "$HOME/.npm"
-  - "$HOME/.yarn-cache"
+  allow_failures: []
+cache: npm
 install:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-install.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-install.bash)"
 before_script:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-verify.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-verify.bash)"
 after_success:
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/surge.bash)"
-- eval "$(curl -s https://raw.githubusercontent.com/bevry/awesome-travis/ef794235b7094de5e49fb64e226da032ce135ecd/scripts/node-publish.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/surge.bash)"
+- eval "$(curl -fsSL https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-publish.bash)"
 notifications:
-  slack:
-    secure: QUQvb5GprdOx6g6BN1bwwEPkW3GdUdHm0j1+4wVHjvgPvAC5+EMpU5yAoQn3VeY9QzNVcgDQRsLWl6Pw3Y4026+jMkvf7XHWxqXRgY666msqj0AE2t57pqLWm3nonJqinioTEndv48WQvOXjh0FXKWHFLkViUBRwObYKvrkYA1M=
   email:
     recipients:
-      secure: AAbtqfaQNGhWIYThXy6l2kM/QR3uavOw2ZqSkZECpepvr+IiZUJwCJ2etkjfC6iACg4X+AnuW2QFkEBl/5WNgu31bEuI2NryQ4l27uOiEcSKpQXYEPexlR/nL7skP2hBVW03ODiXCAefmPxn/k2SOYblcEv4n5+O3gHMCdyQDlw=
+      secure: Jaj4LTsn6etQ9HM2mPjTXrktJzkV+HPI76Hh12nWktmXweHXgh8fDFsCvSUVnKGZpDA8gvIYvbhzFzq1933kxhuSyBPJgQXbQZsW7muTXaKU7v0Wv4iA+y91d2DfLn8THj/uoLAHdnz4DblNXRSlCOzZtQACt2T5xBzzbcO4v8I=
