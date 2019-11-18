@@ -1,7 +1,7 @@
 {
   "title": "DOM Inject",
   "name": "dominject",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
   "homepage": "https://github.com/bevry/dominject",
   "license": "MIT",
@@ -48,7 +48,8 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/dominject/issues"
@@ -58,7 +59,7 @@
     "url": "https://github.com/bevry/dominject.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=8"
   },
   "editions": [
     {
@@ -71,7 +72,7 @@
         "import"
       ],
       "engines": {
-        "node": "0.12 || 4 || 6 || 8 || 10 || 12 || 13",
+        "node": "8 || 10 || 12",
         "browsers": false
       }
     },
@@ -97,18 +98,18 @@
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.7.1",
-    "assert-helpers": "5.2.1",
+    "assert-helpers": "5.4.0",
     "eslint": "^6.6.0",
     "eslint-config-bevry": "^1.2.1",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "^3.2.0",
+    "kava": "4.0.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
-    "projectz": "^1.9.0",
+    "projectz": "^1.10.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.0.0"
+    "valid-directory": "^1.1.1"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
