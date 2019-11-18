@@ -1,7 +1,7 @@
 {
   "title": "DOM Inject",
   "name": "dominject",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
   "homepage": "https://github.com/bevry/dominject",
   "license": "MIT",
