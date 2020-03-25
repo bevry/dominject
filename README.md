@@ -33,6 +33,23 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 <!-- /DESCRIPTION -->
 
 
+## Usage
+
+[Complete API Documentation.](http://master.dominject.bevry.surge.sh/docs/)
+
+```javascript
+var dominject = require('dominject')
+var element = dominject({
+    type: 'script',
+    url: '//some-url.js',
+    attrs: {}, // attributes to be added to the injected dom element
+    timeout: 60 * 1000, // defaults to one minute that is allowed before the injection times out
+    next: function (err, el) {
+        // completion callback for once the element has completed or error'd
+    },
+}) // returns the element that was injected
+```
+
 <!-- INSTALL/ -->
 
 <h2>Install</h2>
@@ -40,14 +57,31 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
 <ul>
 <li>Install: <code>npm install --save dominject</code></li>
-<li>Require: <code>require('dominject')</code></li>
+<li>Import: <code>import * as pkg from ('dominject')</code></li>
+<li>Require: <code>const pkg = require('dominject')</code></li>
 </ul>
+
+<a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
+
+``` html
+<script type="module">
+    import * as pkg from '//cdn.pika.dev/dominject/^4.0.0'
+</script>
+```
+
+<a href="https://unpkg.com" title="unpkg is a fast, global content delivery network for everything on npm"><h3>unpkg</h3></a>
+
+``` html
+<script type="module">
+    import * as pkg from '//unpkg.com/dominject@^4.0.0'
+</script>
+```
 
 <a href="https://jspm.io" title="Native ES Modules CDN"><h3>jspm</h3></a>
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/dominject'
+    import * as pkg from '//dev.jspm.io/dominject@4.0.0'
 </script>
 ```
 
@@ -56,8 +90,8 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 <p>This package is published with the following editions:</p>
 
 <ul><li><code>dominject</code> aliases <code>dominject/source/index.js</code></li>
-<li><code>dominject/source/index.js</code> is esnext source code with import for modules</li>
-<li><code>dominject/edition-browsers/index.js</code> is esnext compiled for browsers with import for modules</li></ul>
+<li><code>dominject/source/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> source code for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>dominject/edition-browsers/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> compiled for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li></ul>
 
 <h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
 
@@ -72,24 +106,6 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 ```
 
 <!-- /INSTALL -->
-
-
-## Usage
-
-``` javascript
-var dominject = require('dominject');
-var element = dominject({
-    type: 'script',
-    url: '//some-url.js',
-    attrs: {},  // attributes to be added to the injected dom element
-    timeout: 60*1000, // defaults to one minute that is allowed before the injection times out
-    next: function(err,el){
-        // completion callback for once the element has completed or error'd
-    }
-}); // returns the element that was injected
-```
-
-[API Documentation](http://master.dominject.bevry.surge.sh/docs/)
 
 
 <!-- HISTORY/ -->
