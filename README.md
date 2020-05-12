@@ -35,7 +35,7 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 
 ## Usage
 
-[Complete API Documentation.](http://master.dominject.bevry.surge.sh/docs/)
+[Complete API Documentation.](http://master.dominject.bevry.surge.sh/docs/index.html)
 
 ```javascript
 var dominject = require('dominject')
@@ -65,7 +65,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/dominject/^4.1.0'
+    import * as pkg from '//cdn.pika.dev/dominject/^4.2.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/dominject@^4.1.0'
+    import * as pkg from '//unpkg.com/dominject@^4.2.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/dominject@4.1.0'
+    import * as pkg from '//dev.jspm.io/dominject@4.2.0'
 </script>
 ```
 
@@ -134,14 +134,14 @@ This project provides its type information via inline <a href="http://usejsdoc.o
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/dominject/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/dominject">view contributions</a></li></ul>
+<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/dominject/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/dominject">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
 These amazing people have contributed finances to this project:
 
 <ul><li><a href="www.wholesale-blank-tshirts.com.au">Wholesale Blank T-Shirts</a></li>
-<li><a href="http://www.topbetta.com.au">TopBetta</a></li></ul>
+<li><a href="https://www.topbetta.com.au">TopBetta</a></li></ul>
 
 Become a sponsor!
 
@@ -159,8 +159,7 @@ Become a sponsor!
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/dominject/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/dominject">view contributions</a></li>
-<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/dominject/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/dominject">view contributions</a></li></ul>
+<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/bevry/dominject/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/dominject">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/dominject/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
