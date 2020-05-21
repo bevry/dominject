@@ -65,7 +65,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/dominject/^4.3.0'
+    import * as pkg from '//cdn.pika.dev/dominject/^4.4.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/dominject@^4.3.0'
+    import * as pkg from '//unpkg.com/dominject@^4.4.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/dominject@4.3.0'
+    import * as pkg from '//dev.jspm.io/dominject@4.4.0'
 </script>
 ```
 
@@ -140,7 +140,7 @@ These amazing people are maintaining this project:
 
 These amazing people have contributed finances to this project:
 
-<ul><li><a href="www.wholesale-blank-tshirts.com.au">Wholesale Blank T-Shirts</a></li>
+<ul><li><a href="https://www.wholesale-blank-tshirts.com.au">Wholesale Blank T-Shirts</a></li>
 <li><a href="https://www.topbetta.com.au">TopBetta</a></li></ul>
 
 Become a sponsor!
