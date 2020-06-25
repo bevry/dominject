@@ -65,7 +65,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/dominject/^4.10.0'
+    import * as pkg from '//cdn.pika.dev/dominject/^4.11.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/dominject@^4.10.0'
+    import * as pkg from '//unpkg.com/dominject@^4.11.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/dominject@4.10.0'
+    import * as pkg from '//dev.jspm.io/dominject@4.11.0'
 </script>
 ```
 
