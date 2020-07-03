@@ -57,15 +57,15 @@ var element = dominject({
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>npm</h3></a>
 <ul>
 <li>Install: <code>npm install --save dominject</code></li>
-<li>Import: <code>import * as pkg from ('dominject')</code></li>
-<li>Require: <code>const pkg = require('dominject')</code></li>
+<li>Import: <code>import pkg from ('dominject')</code></li>
+<li>Require: <code>const pkg = require('dominject').default</code></li>
 </ul>
 
 <a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
 
 ``` html
 <script type="module">
-    import * as pkg from '//cdn.pika.dev/dominject/^4.11.0'
+    import pkg from '//cdn.pika.dev/dominject/^4.12.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//unpkg.com/dominject@^4.11.0'
+    import pkg from '//unpkg.com/dominject@^4.12.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/dominject@4.11.0'
+    import pkg from '//dev.jspm.io/dominject@4.12.0'
 </script>
 ```
 
@@ -89,9 +89,10 @@ var element = dominject({
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>dominject</code> aliases <code>dominject/source/index.js</code></li>
-<li><code>dominject/source/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> source code for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
-<li><code>dominject/edition-browsers/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> compiled for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li></ul>
+<ul><li><code>dominject/source/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> source code for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>dominject/edition-browsers/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> compiled for web browsers with <a href="https://babeljs.io/docs/learn-es2015/#modules" title="ECMAScript Modules">Import</a> for modules</li>
+<li><code>dominject</code> aliases <code>dominject/edition-node-14/index.js</code></li>
+<li><code>dominject/edition-node-14/index.js</code> is <a href="https://en.wikipedia.org/wiki/ECMAScript#ES.Next" title="ECMAScript Next">ESNext</a> compiled for <a href="https://nodejs.org" title="Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine">Node.js</a> 14 with <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a> for modules</li></ul>
 
 <h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
 
