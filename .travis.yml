@@ -13,19 +13,19 @@ cache: npm
 install:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/9fa2fa025c77b463d03154f39922af95cadc9c67/scripts/node-install.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/master/scripts/node-install.bash)"
 before_script:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/9fa2fa025c77b463d03154f39922af95cadc9c67/scripts/node-verify.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/master/scripts/node-verify.bash)"
 after_success:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/9fa2fa025c77b463d03154f39922af95cadc9c67/scripts/surge.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/master/scripts/surge.bash)"
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/9fa2fa025c77b463d03154f39922af95cadc9c67/scripts/node-publish.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/master/scripts/node-publish.bash)"
 notifications:
   email:
     recipients: >-
-      Uv01VVBGtxnA6GnjuNJUZ2b7yDY5fcZnG3jEXge0sqelqV1SWFjpmf13n9+t9amS0dYcxIWbCQdTVYWFTR8JinS9EvLf1trbXtU+vtzZgSDMOsjWta2NNYvBnWTjHKgLoFv1a0IMBcyxIWc+EtCel78JPOkrNsi5QKKCW627X+Q=
+      MLZ+seX8fvgkf4eH98l+Xvf78m5K0fAvT70u/MiVxlXMhNHg2n7m9DQlyZvTF3SNCmbzwKlNKPxmfhTDypuxbqLaEpxy3bMFr47o1lZQyMw9Meph/hN2EFnTZqRv85sOh+ytgI2BtDs3YpB2y5qgfV4Hf2/BSd1pcqLZ4R2K/LE=
