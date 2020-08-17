@@ -61,11 +61,11 @@ var element = dominject({
 <li>Require: <code>const pkg = require('dominject').default</code></li>
 </ul>
 
-<a href="https://www.pika.dev/cdn" title="100% Native ES Modules CDN"><h3>pika</h3></a>
+<a href="https://www.skypack.dev" title="Skypack is a JavaScript Delivery Network for modern web apps"><h3>Skypack</h3></a>
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/dominject/^4.16.0'
+    import pkg from '//cdn.skypack.dev/dominject@^4.17.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/dominject@^4.16.0'
+    import pkg from '//unpkg.com/dominject@^4.17.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/dominject@4.16.0'
+    import pkg from '//dev.jspm.io/dominject@4.17.0'
 </script>
 ```
 
