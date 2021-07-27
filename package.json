@@ -1,7 +1,7 @@
 {
   "title": "DOM Inject",
   "name": "dominject",
-  "version": "4.19.0",
+  "version": "4.20.0",
   "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
   "homepage": "https://github.com/bevry/dominject",
   "license": "MIT",
@@ -18,7 +18,7 @@
   ],
   "badges": {
     "list": [
-      "travisci",
+      "githubworkflow",
       "npmversion",
       "npmdownloads",
       "daviddm",
@@ -35,6 +35,7 @@
       "wishlist"
     ],
     "config": {
+      "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
@@ -44,7 +45,6 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
-      "travisTLD": "com",
       "githubUsername": "bevry",
       "githubRepository": "dominject",
       "githubSlug": "bevry/dominject",
@@ -75,7 +75,7 @@
   },
   "editions": [
     {
-      "description": "ESNext source code for Node.js 12 || 14 || 15 with Import for modules",
+      "description": "ESNext source code for Node.js 12 || 14 with Import for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -85,7 +85,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14 || 15",
+        "node": "12 || 14",
         "browsers": false
       }
     },
@@ -104,8 +104,8 @@
       }
     },
     {
-      "description": "ESNext compiled for Node.js 14 with Require for modules",
-      "directory": "edition-node-14",
+      "description": "ESNext compiled for Node.js 16 with Require for modules",
+      "directory": "edition-node-16",
       "entry": "index.js",
       "tags": [
         "compiled",
@@ -113,17 +113,17 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 14 || 15",
+        "node": "10 || 12 || 14 || 16",
         "browsers": false
       }
     }
   ],
   "type": "module",
-  "main": "edition-node-14/index.js",
+  "main": "edition-node-16/index.js",
   "exports": {
     "node": {
       "import": "./source/index.js",
-      "require": "./edition-node-14/index.js"
+      "require": "./edition-node-16/index.js"
     },
     "browser": {
       "import": "./edition-browsers/index.js"
@@ -132,29 +132,29 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-    "@babel/preset-env": "^7.12.1",
-    "@bevry/update-contributors": "^1.17.0",
-    "assert-helpers": "^8.1.0",
-    "eslint": "^7.12.1",
-    "eslint-config-bevry": "^3.22.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "jsdoc": "^3.6.6",
-    "kava": "^5.12.0",
-    "prettier": "^2.1.2",
-    "projectz": "^2.16.0",
-    "surge": "^0.21.6",
-    "valid-directory": "^3.4.0",
-    "valid-module": "^1.14.0"
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "@bevry/update-contributors": "^1.18.0",
+    "assert-helpers": "^8.2.0",
+    "eslint": "^7.31.0",
+    "eslint-config-bevry": "^3.23.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jsdoc": "^3.6.7",
+    "kava": "^5.13.0",
+    "prettier": "^2.3.2",
+    "projectz": "^2.18.0",
+    "surge": "^0.23.0",
+    "valid-directory": "^3.7.0",
+    "valid-module": "^1.15.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-14",
+    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-16",
     "our:compile:edition-browsers": "env BABEL_ENV=edition-browsers babel --out-dir ./edition-browsers ./source",
-    "our:compile:edition-node-14": "env BABEL_ENV=edition-node-14 babel --out-dir ./edition-node-14 ./source && echo '{\"type\": \"commonjs\"}' > edition-node-14/package.json",
+    "our:compile:edition-node-16": "env BABEL_ENV=edition-node-16 babel --out-dir ./edition-node-16 ./source && echo '{\"type\": \"commonjs\"}' > edition-node-16/package.json",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:docs && npm run our:meta:projectz",
     "our:meta:contributors": "update-contributors",
@@ -165,7 +165,7 @@
     "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
-    "our:release:push": "git push origin master && git push origin --tags",
+    "our:release:push": "git push origin && git push origin --tags",
     "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
     "our:setup": "npm run our:setup:install",
     "our:setup:install": "npm install",
@@ -175,7 +175,7 @@
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
     "our:verify:module": "valid-module",
     "our:verify:prettier": "prettier --write .",
-    "test": "node ./edition-node-14/test.js"
+    "test": "node ./edition-node-16/test.js"
   },
   "eslintConfig": {
     "extends": [
@@ -206,14 +206,14 @@
           "@babel/proposal-object-rest-spread"
         ]
       },
-      "edition-node-14": {
+      "edition-node-16": {
         "sourceType": "module",
         "presets": [
           [
             "@babel/preset-env",
             {
               "targets": {
-                "node": "14"
+                "node": "16"
               },
               "modules": "commonjs"
             }
