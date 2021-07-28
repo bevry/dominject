@@ -1,7 +1,7 @@
 {
   "title": "DOM Inject",
   "name": "dominject",
-  "version": "4.20.0",
+  "version": "4.21.0",
   "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
   "homepage": "https://github.com/bevry/dominject",
   "license": "MIT",
@@ -75,7 +75,7 @@
   },
   "editions": [
     {
-      "description": "ESNext source code for Node.js 12 || 14 with Import for modules",
+      "description": "ESNext source code for Node.js 12 || 14 || 16 with Import for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -85,7 +85,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14",
+        "node": "12 || 14 || 16",
         "browsers": false
       }
     },
@@ -136,19 +136,19 @@
     "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
     "@babel/preset-env": "^7.14.8",
-    "@bevry/update-contributors": "^1.18.0",
+    "@bevry/update-contributors": "^1.19.0",
     "assert-helpers": "^8.2.0",
     "eslint": "^7.31.0",
     "eslint-config-bevry": "^3.23.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "jsdoc": "^3.6.7",
-    "kava": "^5.13.0",
+    "kava": "^5.14.0",
     "prettier": "^2.3.2",
     "projectz": "^2.18.0",
     "surge": "^0.23.0",
     "valid-directory": "^3.7.0",
-    "valid-module": "^1.15.0"
+    "valid-module": "^1.16.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
