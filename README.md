@@ -35,7 +35,7 @@ Inject scripts and styles into the DOM with duplicate prevention and completion 
 
 ## Usage
 
-[Complete API Documentation.](http://master.dominject.bevry.surge.sh/docs/index.html)
+[Complete API Documentation.](http://master.dominject.bevry.surge.sh/docs/)
 
 ```javascript
 var dominject = require('dominject')
@@ -65,7 +65,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.skypack.dev/dominject@^4.21.0'
+    import pkg from '//cdn.skypack.dev/dominject@^4.22.0'
 </script>
 ```
 
@@ -73,7 +73,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/dominject@^4.21.0'
+    import pkg from '//unpkg.com/dominject@^4.22.0'
 </script>
 ```
 
@@ -81,7 +81,7 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/dominject@4.21.0'
+    import pkg from '//dev.jspm.io/dominject@4.22.0'
 </script>
 ```
 
