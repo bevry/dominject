@@ -99,7 +99,7 @@ export default function dominject(opts /* :Object */) {
 		if (!el.domInjectDone) {
 			// Error
 			const err = new Error(
-				`The url ${url} took too long to be injected and timed out`
+				`The url ${url} took too long to be injected and timed out`,
 			)
 			finish(err)
 		}
@@ -167,7 +167,7 @@ export default function dominject(opts /* :Object */) {
 		default: {
 			// Error
 			const err = new Error(
-				`The url ${url} has an unknown inject type of ${type}`
+				`The url ${url} has an unknown inject type of ${type}`,
 			)
 			return next(err)
 		}

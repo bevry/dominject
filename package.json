@@ -1,13 +1,14 @@
 {
   "title": "DOM Inject",
   "name": "dominject",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "description": "Inject scripts and styles into the DOM with duplicate prevention and completion callback support",
   "homepage": "https://github.com/bevry/dominject",
   "license": "Artistic-2.0",
   "keywords": [
     "browser",
     "dom",
+    "es2023",
     "esnext",
     "export-default",
     "inject",
@@ -114,6 +115,7 @@
       "tags": [
         "compiled",
         "javascript",
+        "es2023",
         "require"
       ],
       "engines": {
@@ -137,22 +139,21 @@
   "module": "edition-browsers/index.js",
   "devDependencies": {
     "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.3",
+    "@babel/core": "^7.23.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-env": "^7.23.5",
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.6.0",
-    "eslint": "^8.54.0",
-    "eslint-config-bevry": "^5.1.0",
-    "eslint-config-prettier": "^9.0.0",
+    "assert-helpers": "^11.9.0",
+    "eslint": "^8.55.0",
+    "eslint-config-bevry": "^5.2.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "jsdoc": "^4.0.2",
-    "kava": "^7.3.0",
+    "kava": "^7.5.0",
     "prettier": "^3.1.0",
-    "projectz": "^3.3.0",
-    "surge": "^0.23.1",
-    "valid-directory": "^4.5.0",
-    "valid-module": "^2.5.0"
+    "projectz": "^3.4.0",
+    "valid-directory": "^4.6.0",
+    "valid-module": "^2.6.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -189,7 +190,8 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "trailingComma": "es5"
+    "trailingComma": "all",
+    "endOfLine": "lf"
   },
   "babel": {
     "env": {
