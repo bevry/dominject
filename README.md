@@ -62,21 +62,21 @@ var element = dominject({
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.skypack.dev/dominject@^5.8.0'
+    import pkg from '//cdn.skypack.dev/dominject@^5.9.0'
 </script>
 ```
 ### [unpkg](https://unpkg.com "unpkg is a fast, global content delivery network for everything on npm")
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/dominject@^5.8.0'
+    import pkg from '//unpkg.com/dominject@^5.9.0'
 </script>
 ```
 ### [jspm](https://jspm.io "Native ES Modules CDN")
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/dominject@5.8.0'
+    import pkg from '//dev.jspm.io/dominject@5.9.0'
 </script>
 ```
 ### [Editions](https://editions.bevry.me "Editions are the best way to produce and consume packages you care about.")
